@@ -12,16 +12,16 @@ import { AlertCircle } from 'lucide-react'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/shared/ui/select"
 
 const cities = [
-  "New York",
-  "Los Angeles",
-  "Chicago",
-  "Houston",
-  "Phoenix",
-  "Philadelphia",
-  "San Antonio",
-  "San Diego",
-  "Dallas",
-  "San Jose"
+  "Москва",
+  "Санкт-Петербург",
+  "Иркутск",
+  "Краснодар",
+  "Ростов-на-Дону",
+  "Сочи",
+  "Ялта",
+  "Самара",
+  "Аксай",
+  "Калининград"
 ]
 
 export default function SignUpForm() {
@@ -91,7 +91,7 @@ export default function SignUpForm() {
             </Button>
             <div className="text-sm text-center text-primary/50">
               Аккаунт уже существует?{' '}
-              <Link href="/signin" className="text-primary hover:underline" aria-label="Sign in to your account">
+              <Link href="/signin" className="text-primary hover:underline" aria-label="войдите в свой аккаунт">
                 Войти
               </Link>
             </div>
