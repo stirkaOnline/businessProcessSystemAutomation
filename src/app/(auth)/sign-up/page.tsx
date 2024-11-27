@@ -6,8 +6,7 @@ import Link from 'next/link'
 import { signUp } from '../../../actions/auth'
 import { Button } from "@/shared/ui/button"
 import { Input } from "@/shared/ui/input"
-import { Label } from "@/shared/ui/label"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/shared/ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/shared/ui/card"
 import { AlertCircle } from 'lucide-react'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/shared/ui/select"
 
