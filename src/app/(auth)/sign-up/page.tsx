@@ -39,7 +39,6 @@ export default function SignUpForm() {
       <Card className="w-[430px]">
         <CardHeader>
           <CardTitle className="text-2xl font-medium text-center">Авторизация в системе</CardTitle>
-          {/*<CardDescription className='text-primary/50'>создайте новый аккаунт</CardDescription>*/}
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent>
@@ -55,7 +54,6 @@ export default function SignUpForm() {
                 )}
               </div>
               <div className="flex flex-col space-y-1.5">
-                {/*<Label htmlFor="password">Пароль</Label>*/}
                 <Input className="h-12 rounded-full border-gray-300" id="password" name="password" type="password" placeholder="Пароль*" required />
                 {state?.error?.password && (
                   <p className="text-sm text-red-500 flex items-center mt-1">
@@ -65,7 +63,6 @@ export default function SignUpForm() {
                 )}
               </div>
               <div className="flex flex-col space-y-1.5">
-                {/*<Label htmlFor="city">Город</Label>*/}
                 <Select name="city" required>
                   <SelectTrigger id="city">
                     <SelectValue placeholder="выберите город" />
