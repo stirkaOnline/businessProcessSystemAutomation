@@ -19,8 +19,6 @@ export async function signUp(formData: FormData) {
     return { error: validatedFields.error.flatten().fieldErrors }
   }
 
-  // Here you would typically create the user in your database
-  // For now, we'll just simulate a successful sign-up
   await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
 
   return { success: true }
