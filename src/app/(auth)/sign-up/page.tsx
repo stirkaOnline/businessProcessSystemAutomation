@@ -38,15 +38,15 @@ export default function SignUpForm() {
     <div className='flex items-center justify-center min-h-screen bg-gray-200'>
       <Card className="w-[430px]">
         <CardHeader>
-          <CardTitle className="text-2xl">Авторизация в системе</CardTitle>
-          <CardDescription className='text-primary/50'>создайте новый аккаунт</CardDescription>
+          <CardTitle className="text-2xl font-medium text-center">Авторизация в системе</CardTitle>
+          {/*<CardDescription className='text-primary/50'>создайте новый аккаунт</CardDescription>*/}
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" placeholder="Enter your email" required />
+                {/*<Label htmlFor="email">Email</Label>*/}
+                <Input className="h-12 rounded-full border-gray-300" id="email" name="email" type="email" placeholder="Email*" required />
                 {state?.error?.email && (
                   <p className="text-sm text-red-500 flex items-center mt-1">
                     <AlertCircle className="h-4 w-4 mr-1" />
@@ -55,8 +55,8 @@ export default function SignUpForm() {
                 )}
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="password">Пароль</Label>
-                <Input id="password" name="password" type="password" placeholder="Enter your password" required />
+                {/*<Label htmlFor="password">Пароль</Label>*/}
+                <Input className="h-12 rounded-full border-gray-300" id="password" name="password" type="password" placeholder="Пароль*" required />
                 {state?.error?.password && (
                   <p className="text-sm text-red-500 flex items-center mt-1">
                     <AlertCircle className="h-4 w-4 mr-1" />
@@ -65,7 +65,7 @@ export default function SignUpForm() {
                 )}
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="city">Город</Label>
+                {/*<Label htmlFor="city">Город</Label>*/}
                 <Select name="city" required>
                   <SelectTrigger id="city">
                     <SelectValue placeholder="выберите город" />
@@ -86,12 +86,12 @@ export default function SignUpForm() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col gap-4">
-            <Button className="w-full bg-blue-700 hover:bg-blue-700/80" type="submit" disabled={isSubmitting}>
+            <Button className="w-full h-12 bg-[#2B579A] hover:bg-[#1E3F6F] rounded-full text-base font-medium mt-2" type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Signing up...' : 'Зарегистрироваться'}
             </Button>
             <div className="text-sm text-center text-primary/50">
               Аккаунт уже существует?{' '}
-              <Link href="/signin" className="text-primary hover:underline" aria-label="войдите в свой аккаунт">
+              <Link href="/signin" className="text-gray-600 hover:underline" aria-label="войдите в свой аккаунт">
                 Войти
               </Link>
             </div>
