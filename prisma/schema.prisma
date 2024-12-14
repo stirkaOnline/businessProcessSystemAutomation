@@ -16,11 +16,4 @@ datasource db {
 model User {
  id     String  @id @default(cuid())
  username   String?
- role   Role    @default(USER)
- email  String  @unique
-}
-
-enum Role {
-  USER
-  ADMIN
 }
