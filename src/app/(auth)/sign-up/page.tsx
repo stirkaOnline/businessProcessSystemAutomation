@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { useFormState } from "react-dom";
+// import { useState } from "react";
+// import { useFormState } from "react-dom";
 import Link from "next/link";
-import { signUp } from "../../../actions/auth";
+// import { signUp } from "../../../actions/auth";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 import {
@@ -36,14 +36,14 @@ const cities = [
 ];
 
 export default function SignUpForm() {
-  const [state, formAction] = useFormState(signUp, null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = (formData: FormData) => {
-    setIsSubmitting(true);
-    formAction(formData);
-    setIsSubmitting(false);
-  };
+  // const [state, formAction] = useFormState(signUp, null);
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  //
+  // const handleSubmit = (formData: FormData) => {
+  //   setIsSubmitting(true);
+  //   formAction(formData);
+  //   setIsSubmitting(false);
+  // };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-200">
@@ -53,7 +53,7 @@ export default function SignUpForm() {
             Авторизация в системе
           </CardTitle>
         </CardHeader>
-        <form onSubmit={handleSubmit}>
+        <form>
           <CardContent>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
@@ -66,12 +66,10 @@ export default function SignUpForm() {
                   placeholder="Email*"
                   required
                 />
-                {state?.error?.email && (
                   <p className="text-sm text-red-500 flex items-center mt-1">
                     <AlertCircle className="h-4 w-4 mr-1" />
-                    {state.error.email}
+                    error
                   </p>
-                )}
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Input
@@ -82,12 +80,10 @@ export default function SignUpForm() {
                   placeholder="Пароль*"
                   required
                 />
-                {state?.error?.password && (
                   <p className="text-sm text-red-500 flex items-center mt-1">
                     <AlertCircle className="h-4 w-4 mr-1" />
-                    {state.error.password}
+                    error
                   </p>
-                )}
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Select name="city" required>
@@ -102,12 +98,10 @@ export default function SignUpForm() {
                     ))}
                   </SelectContent>
                 </Select>
-                {state?.error?.city && (
                   <p className="text-sm text-red-500 flex items-center mt-1">
                     <AlertCircle className="h-4 w-4 mr-1" />
-                    {state.error.city}
+                    error
                   </p>
-                )}
               </div>
             </div>
           </CardContent>
@@ -115,9 +109,7 @@ export default function SignUpForm() {
             <Button
               className="w-full h-12 bg-[#2B579A] hover:bg-[#1E3F6F] rounded-full text-base font-medium mt-2"
               type="submit"
-              disabled={isSubmitting}
             >
-              {isSubmitting ? "Signing up..." : "Зарегистрироваться"}
             </Button>
             <div className="text-sm text-center text-primary/50">
               Аккаунт уже существует?{" "}
@@ -131,11 +123,9 @@ export default function SignUpForm() {
             </div>
           </CardFooter>
         </form>
-        {state?.success && (
           <p className="text-sm text-green-500 text-center mt-2">
-            Авторизация прошла успешно! {state.data.city}!
+            Авторизация прошла успешно!
           </p>
-        )}
       </Card>
     </div>
   );

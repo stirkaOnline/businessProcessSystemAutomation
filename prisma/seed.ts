@@ -1,18 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
-async function main() {
-  await prisma.user.create({
-    data: {
-      username: "igor golikov",
-    },
-  });
-
-  await prisma.user.create({
-    data: {
-      username: "lira tichinina",
-    },
-  });
-}
+async function main() {}
 main()
   .then(async () => {
     await prisma.$disconnect();

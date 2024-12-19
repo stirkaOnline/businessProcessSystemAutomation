@@ -20,7 +20,6 @@ import {
   Package,
   Users,
   FileText,
-  Settings,
 } from "lucide-react";
 import { CreateServiceModal } from "./create-service-modal";
 
@@ -81,6 +80,7 @@ export default function ServiceCatalog() {
   ];
 
   return (
+      <>
     <div className="flex h-screen bg-gray-100">
       <nav className="w-64 bg-[#29375F] text-white">
         <div className="p-4">
@@ -265,10 +265,10 @@ export default function ServiceCatalog() {
                   </TableCell>
                   <TableCell>
                     <Badge
-                      variant={service.isActive ? "success" : "destructive"}
-                      className={`${service.isActive ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                      variant={"destructive"}
+                      className={"bg-green-100 text-green-800" : "bg-red-100 text-red-800"}
                     >
-                      {service.isActive ? "Активен" : "Деактивирован"}
+                      {"Активен"}
                     </Badge>
                   </TableCell>
                   <TableCell>
@@ -321,5 +321,6 @@ export default function ServiceCatalog() {
         onClose={() => setIsModalOpen(false)}
       />
     </div>
+        </>
   );
-}
+};
